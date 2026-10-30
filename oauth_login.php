@@ -1,0 +1,1 @@
+<?php session_start(); $state = bin2hex(random_bytes(16)); $_SESSION['oauth_state'] = $state; $auth_url = "https://github.com/login/oauth/authorize?" . http_build_query([ "client_id" => "Ov23liabZZoP6HrZ4Odv", "redirect_uri" => "http://localhost/oauth/oauth_callback.php", "state" => $state, "scope" => "read:user" ]); header("Location: " . $auth_url); exit(); ?>
